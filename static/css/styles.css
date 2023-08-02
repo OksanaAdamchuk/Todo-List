@@ -1,0 +1,31 @@
+body {
+  margin: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.done-mark {
+  color: green;
+}
+
+.undone-mark {
+  color: red;
+}
+
+.time-paragraph {
+  font-size: smaller;
+}
+
+.tags-mark {
+  color: rgb(117, 112, 112);
+}
+
+.time-paragraph span.deadline-mark {
+  color:blueviolet;
+}
+
+a.link-to-page {
+  text-decoration: none;
+}

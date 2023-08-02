@@ -12,7 +12,34 @@
     <ul class="list-group">
 
       {% for task in task_list %}
-        <li class="list-group-item"> {{ task.content }} </li>
+        <li>
+          <strong> {{ task.content }} 
+            {% if task.completed %}
+            <span class="done-mark">Done</span>
+            {% else %}
+            <span class="undone-mark">Not done</span>
+            {% endif %}
+          </strong><br>
+          <span class="time-paragraph">Created: {{ task.created_at }} 
+            {% if task.deadline %}
+            <span class="deadline-mark"> {{ task.deadline }}</span>
+            {% endif %}
+          </span><br>
+          <strong><span class="tags-mark">Tags:
+            {% for tag in task.tags.all %}
+              {{ tag.name }}
+            {% endfor %}
+          </span></strong>
+          <span> 
+            <a href="{% url 'todo:task-update' pk=task.id %}" class="link-to-page">
+              Update
+            </a>
+            <a href="{% url 'todo:task-delete' pk=task.id %}" class="link-to-page">
+              Delete
+            </a>
+          </span>
+        </li>
+        <hr>
       {% endfor %}
     </ul>
   {% else %}
