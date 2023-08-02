@@ -23,8 +23,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path(
         "",
-        include("shelter.urls", namespace="shelter"),
+        include("todo.urls", namespace="todo"),
     ),
-    path("__debug__/", include("debug_toolbar.urls")),
-    path("accounts/", include("django.contrib.auth.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
