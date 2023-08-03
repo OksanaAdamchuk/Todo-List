@@ -1,0 +1,50 @@
+body {
+  margin: 20px;
+}
+
+h1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.done-mark {
+  color: green;
+}
+
+.undone-mark {
+  color: red;
+}
+
+.time-paragraph {
+  font-size: smaller;
+}
+
+.tags-mark {
+  color: rgb(117, 112, 112);
+}
+
+.time-paragraph span.deadline-mark {
+  color:blueviolet;
+}
+
+a.link-to-page {
+  text-decoration: none;
+}
+
+form.link-to-assign {
+  display: inline-block;
+}
+
+li.task-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-paragraph {
+  flex-grow: 1;
+}
