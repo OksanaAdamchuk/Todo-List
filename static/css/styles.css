@@ -2,6 +2,12 @@ body {
   margin: 20px;
 }
 
+h1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
 ul {
   list-style-type: none;
 }
@@ -28,4 +34,17 @@ ul {
 
 a.link-to-page {
   text-decoration: none;
+}
+
+form.link-to-assign {
+  display: inline-block;
+}
+
+li.task-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-paragraph {
+  flex-grow: 1;
 }

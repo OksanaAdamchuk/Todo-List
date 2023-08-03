@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -8,6 +8,14 @@ from todo.models import Tag, Task
 class TaskListView(generic.ListView):
     model = Task
     queryset = Task.objects.prefetch_related("tags")
+
+    def post(self, request, *args, **kwargs):
+        pk = kwargs.get("pk")
+        task = get_object_or_404(Task, pk=pk)
+        task.completed = not task.completed
+        task.save()
+
+        return redirect("todo:task-list")
 
 
 class TagListView(generic.ListView):

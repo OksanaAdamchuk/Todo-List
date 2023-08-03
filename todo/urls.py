@@ -7,6 +7,7 @@ urlpatterns = [
     path(
         "", TaskListView.as_view(), name="task-list"
     ),
+    path("toggle/<int:pk>/", TaskListView.as_view(), name="toggle-task"),
     path(
         "task/create/", TaskCreateView.as_view(), name="task-create"
     ),
