@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -12,7 +12,7 @@ class TaskListView(generic.ListView):
     def post(self, request, *args, **kwargs):
         pk = kwargs.get("pk")
         task = get_object_or_404(Task, pk=pk)
-        task.completed = not task.completed
+        task.is_complete = not task.is_complete
         task.save()
 
         return redirect("todo:task-list")
